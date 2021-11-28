@@ -33,4 +33,34 @@ func main(){
 	colly.AllowedDomains("coursera.org", "www.coursera.org")
 
 
+	// Cache responses to prevent multiple download 
+	// even if the collector is reloaded
+
+	colly.CacheDir("./coursera_cache")
+
+)
+
+// Create another collector to cscrape course details
+
+detailCollector := c.Clone()
+
+courses := make([]Course, 0, 200)
+
+// On every link elelement which has href attribute call callback
+c.OnHTML("a[href", func(e *colly.HTMLElement){
+
+	// If attribute class is this long return from callback
+	// As this is a irrelevant
+	if e.Attr("class") == "Button_1qxkboh-o_O-primary_cv02ee-o_O-md_28awn8-o_O-primaryLink_109aggg"{
+		return
+
+	} 
+	link := e.Attr("href")
+	// If link start with browse or includes either signup or login return from callback
+	if !strings.HasPrefix(link, "/browse")
+
+		
+})
+
+
 }
