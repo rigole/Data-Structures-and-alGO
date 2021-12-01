@@ -24,10 +24,10 @@ func main() {
 
 	// Arithmetics
 
-	x := 42
-	y := 8
+	x := 15
+	//y := 8
 
-	res := x + y 
+	/*res := x + y 
 	fmt.Println(res)
 
 
@@ -47,8 +47,15 @@ func main() {
 
 	res5 := x%y 
 
-	fmt.Println(res5)
+	fmt.Println(res5)*/
 
+	/*res := (x > 18) || x == 0
+	fmt.Println(res)*/
+
+	var input int 
+	fmt.Scanln(&input)
+
+	fmt.Println(x * input)
 
 
 
