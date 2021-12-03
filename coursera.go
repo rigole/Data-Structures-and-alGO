@@ -57,7 +57,12 @@ c.OnHTML("a[href", func(e *colly.HTMLElement){
 	} 
 	link := e.Attr("href")
 	// If link start with browse or includes either signup or login return from callback
-	if !strings.HasPrefix(link, "/browse")
+	if !strings.HasPrefix(link, "/browse") || strings.Index(link, "=signup") > -1 || strings.Index(link, "=login") > -1 {
+
+		return
+
+	}
+	// start scraping 
 
 		
 })
