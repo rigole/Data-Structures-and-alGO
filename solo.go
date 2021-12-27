@@ -81,7 +81,7 @@ func main() {
 		fmt.Println(x)
 	}*/
 
-	x := 8 
+	/*x := 8 
 	switch y:=x%2; y {
 	case 0:
 		x -= 1
@@ -89,9 +89,17 @@ func main() {
 		x += 1
 	
 	}
-	fmt.Println(x)
+	fmt.Println(x)*/
 
+	sum :=0
 
+	for i:= 1; i<=3; i++ {
+		sum += i
+	}
+
+	fmt.Println(sum)
+
+//A1^|g@8J3wH\@#r{
 }
 
 
