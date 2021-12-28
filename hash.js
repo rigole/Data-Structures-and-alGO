@@ -41,7 +41,7 @@ class Hashtable {
 			 this.data[address] = []
  
 		}
-		
+
 		 this.data[address].push([key, value])
 
 		 return this.data
@@ -68,6 +68,25 @@ class Hashtable {
 
 		return undefined
 	}
+
+	keys(){ 
+
+	const keysArray = []
+
+	for (let i = 0;  i < this.data.length; i++) {
+
+				if (this.data[i]) {
+
+					keysArray.push(this.data[i][0])
+
+			}
+
+		}
+
+		return keysArray
+
+	}
+
 }
 
 const myHashTable = new Hashtable(2)
@@ -75,3 +94,5 @@ const myHashTable = new Hashtable(2)
 myHashTable.set('grapes', 10000)
 
 myHashTable.set('Tomatoes', 500)
+
+myHashTable.keys()
