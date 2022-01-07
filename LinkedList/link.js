@@ -19,6 +19,7 @@ console.log(obj2) */
     }
 }*/
 
+// Create
 class LinkedList {
     constructor(value) {
         this.head = {
@@ -28,5 +29,24 @@ class LinkedList {
         this.tail = this.head;
         this.length = 1;
     }
+
+    //Append
+
+    append(value) {
+
+        const newNode = {
+            value : value,
+            next: null
+        }
+
+        this.tail.next = newNode
+        this.tail = newNode
+        this.length++;
+        return this;
+
+    }
 }
+
+const myLinkedList = new LinkedList(10);
+console.log(myLinkedList)
 
