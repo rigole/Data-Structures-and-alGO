@@ -97,7 +97,18 @@ class LinkedList {
             currentNode = currentNode.next
             counter++;
         }
-        return currentNode;
+     
+     
+       return currentNode;
+    }
+
+    remove(index){
+        // check params
+        const leader = this.traverseToIndex(index-1)
+        const unwantedNode = leader.next
+        leader.next = unwantedNode.next
+        this.length--;
+        return this.printList()
     }
 }
 
