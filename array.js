@@ -138,6 +138,7 @@ function mergeSortedArrays(array1, array2){
 			j++
 		} 
 	}
+	
 
 
 

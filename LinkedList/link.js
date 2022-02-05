@@ -144,4 +144,3 @@ myLinkedList.insert(2, 87)
 //console.log(myLinkedList) 
 myLinkedList.printList();
 myLinkedList.reverse()
-
