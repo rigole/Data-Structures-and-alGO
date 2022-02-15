@@ -9,36 +9,22 @@ class Node {
 
 class Stack{
     constructor(){
-        this.top = null;
-        this.bottom = null;
-        this.length = 0;
+       this.array = [];
     }
     peek(){
 
-        return this.top;
+        return this.array[this.array.length-1];
 
     }
 
     push(value){
-        const newNode = new Node(value);
-        if (this.length === 0) {
-            this.top = newNode;
-            this.bottom = newNode;
-        }
-        else {
-
-            const holdingPointer = this.top;
-            this.top = newNode;
-            this.top.next = holdingPointer;
-
-
-        }
-        this.length++;
+        this.array.push(value)
         return this;
 
     }
     pop(){
-
+        this.array.pop();
+        return this;
     }
 
   
@@ -46,3 +32,4 @@ class Stack{
 
 const myStack = new Stack();
 myStack.push('google');
+myStack.peek()
