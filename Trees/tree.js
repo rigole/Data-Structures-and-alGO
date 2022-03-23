@@ -90,14 +90,39 @@ class BinaryTreeNode {
                     
                 }else if (currentNode.right.left === null){
                     if (parentNode === null) {
-                        
+
                         this.root = currentNode.left;
                     } else {
-                        
+                        currentNode.right.left = currentNode.left;
+                        if (currentNode.value < parentNode.value) {
+
+                            parentNode.left = currentNode.right;
+                        } else if(currentNode.value > parentNode.value){
+                            parentNode.right = currentNode.right;
+                        }
                     }
 
                 } else {
+                    let leftmost = currentNode.right.left;
+                    let leftmostParent = currentNode.right;
 
+                    while (leftmost.left !== null) {
+                       leftmostParent =  leftmost;
+                       leftmost = leftmost.left;
+                    }
+
+                    leftmostParent.left = leftmost.right;
+                    leftmost.left = currentNode.left;
+                    leftmost.right = currentNode.right;
+                    if (parentNode === null) {
+                        this.root = leftmost;
+                    } else {
+                        if (currentNode.value < parentNode.value) {
+                            parentNode.left = leftmost;
+                        } else if (currentNode.value > parentNode.value){
+                            parentNode.right = leftmost;
+                        }
+                    }
                 }
             return true;
             }
